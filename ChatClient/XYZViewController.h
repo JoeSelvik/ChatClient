@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XYZViewController : UIViewController <NSStreamDelegate>
+@interface XYZViewController : UIViewController <NSStreamDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *inputNameField;
 - (IBAction)joinChat:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *inputMessageField;
+@property (weak, nonatomic) IBOutlet UITableView *tView;
+- (IBAction)sendMessage:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIView *chatView;
+
 
 @property (strong, nonatomic) NSInputStream *inputStream;
 @property (strong, nonatomic) NSOutputStream *outputStream;
