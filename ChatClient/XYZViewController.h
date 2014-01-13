@@ -23,4 +23,6 @@
 @property (strong, nonatomic) NSInputStream *inputStream;
 @property (strong, nonatomic) NSOutputStream *outputStream;
 
+@property (strong, nonatomic) NSMutableArray * messages;
+
 @end

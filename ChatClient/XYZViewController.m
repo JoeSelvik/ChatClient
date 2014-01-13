@@ -31,6 +31,10 @@
 }
 
 - (IBAction)joinChat:(id)sender {
+    NSString *response  = [NSString stringWithFormat:@"iam:%@", self.inputNameField.text];
+	NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
+	[self.outputStream write:[data bytes] maxLength:[data length]];
+    
     [self.view bringSubviewToFront:self.chatView];
 }
 
@@ -58,7 +62,11 @@
 }
 
 - (IBAction)sendMessage:(id)sender {
+    NSString *response  = [NSString stringWithFormat:@"msg:%@", self.inputMessageField.text];
     
+	NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
+    
+	[self.outputStream write:[data bytes] maxLength:[data length]];
 }
 
 
