@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XYZViewController : UIViewController
+@interface XYZViewController : UIViewController <NSStreamDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *inputNameField;
+- (IBAction)joinChat:(id)sender;
+
+@property (strong, nonatomic) NSInputStream *inputStream;
+@property (strong, nonatomic) NSOutputStream *outputStream;
 
 @end
